@@ -4,7 +4,7 @@
 
 ## Project Summary
 
-Create a tracker that tracks daily expenses
+A full-stack expense tracking application that allows users to record, organize, and review their personal expenses through a web interface and REST API.
 
 ---
 
