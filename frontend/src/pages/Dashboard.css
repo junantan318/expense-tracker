@@ -154,9 +154,17 @@ button {
 
 .dashboard-grid {
   display: grid;
+<<<<<<< HEAD
   grid-template-columns: minmax(0, 2fr) minmax(260px, 1fr);
   gap: 18px;
 }
+=======
+  grid-template-columns: 2fr 1fr;
+  gap: 18px;
+  margin-bottom: 24px;
+}
+
+>>>>>>> 4f7dca4 (added login,register,landing and part dashboard)
 .panel {
   padding: 22px;
   border-radius: 12px;
@@ -287,6 +295,7 @@ td {
   .summary-grid {
     grid-template-columns: 1fr;
   }
+<<<<<<< HEAD
 }
 
 .dashboard-error {
@@ -430,3 +439,6 @@ td {
   min-width: 0;
   overflow: visible;
 }
+=======
+}
+>>>>>>> 4f7dca4 (added login,register,landing and part dashboard)
