@@ -3,4 +3,5 @@ __pycache__/
 *.pyc
 .venv/
 backend/.env
+frontend/.env
 backend/.env.prod
