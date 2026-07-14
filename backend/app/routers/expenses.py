@@ -31,9 +31,21 @@ def get_expense_summary(db: Session = Depends(get_db), current_user: models.User
 @router.post("/", response_model=schemas.ExpenseResponse)
 def create_expense(expense: schemas.ExpenseCreate, db: Session = Depends(get_db), current_user: models.User = Depends(oauth2.get_current_user)):
     # Check if the category exists and belongs to the current user
-    category = db.query(models.Category).filter(models.Category.id == expense.category_id, models.Category.user_id == current_user.id).first()
-    if not category:
-        raise HTTPException(status_code=404, detail="Category not found or does not belong to the user")
+    if expense.category_id is not None:
+        category = (
+            db.query(models.Category)
+            .filter(
+                models.Category.id == expense.category_id,
+                models.Category.user_id == current_user.id,
+            )
+            .first()
+        )
+
+        if category is None:
+            raise HTTPException(
+                status_code=404,
+                detail="Category not found or does not belong to the user",
+            )
     
     new_expense = models.Expense(
         title=expense.title,
@@ -67,10 +79,18 @@ def update_expense(expense_id: int, expense: schemas.ExpenseCreate, db: Session 
         raise HTTPException(status_code=404, detail="Expense not found")
     
     # Check if the category exists and belongs to the current user
-    category = db.query(models.Category).filter(models.Category.id == expense.category_id, models.Category.user_id == current_user.id).first()
-    if not category:
-        raise HTTPException(status_code=404, detail="Category not found or does not belong to the user")
-    
+    if expense.category_id is not None:
+        category = (
+            db.query(models.Category)
+            .filter(
+                models.Category.id == expense.category_id,
+                models.Category.user_id == current_user.id,
+            )
+            .first()
+        )
+        if not category:
+            raise HTTPException(status_code=404, detail="Category not found or does not belong to the user")
+
     existing_expense.title = expense.title
     existing_expense.amount = expense.amount
     existing_expense.description = expense.description

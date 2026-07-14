@@ -11,9 +11,19 @@ router = APIRouter(
 
 @router.post("/", response_model=schemas.CategoryResponse)
 def create_category(category: schemas.CategoryCreate, db: Session = Depends(get_db), current_user: models.User = Depends(oauth2.get_current_user)):
-    existing_category = db.query(models.Category).filter(models.Category.name == category.name).first()
+    existing_category = (
+    db.query(models.Category)
+    .filter(
+        models.Category.name == category.name,
+        models.Category.user_id == current_user.id,
+    )
+    .first()
+)
     if existing_category:
-        raise HTTPException(status_code=400, detail="Category already exists")
+        raise HTTPException(
+            status_code=400,
+            detail="You already have a category with this name",
+        )
     
     new_category = models.Category(name=category.name, user_id=current_user.id)
     db.add(new_category)

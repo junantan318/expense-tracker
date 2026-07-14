@@ -29,7 +29,7 @@ class ExpenseCreate(BaseModel):
     amount: float
     description: str | None = None
     date: datetime
-    category_id: int
+    category_id: int | None = None
 
 class ExpenseResponse(BaseModel):
     id: int
@@ -37,7 +37,7 @@ class ExpenseResponse(BaseModel):
     amount: float
     description: str | None = None
     date: datetime
-    category_id: int
+    category_id: int | None = None
     user_id: int
     created_at: datetime
     updated_at: datetime
