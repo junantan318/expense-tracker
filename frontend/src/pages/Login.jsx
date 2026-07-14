@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate , Navigate} from "react-router-dom";
 import api from "../services/api";
 import "./Auth.css";
 import { isAuthenticated, setToken } from "../services/auth";
