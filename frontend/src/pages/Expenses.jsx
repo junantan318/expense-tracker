@@ -281,13 +281,13 @@ function openEditForm(expense) {
           <h2 className="expenses-logo">ExpenseTracker</h2>
 
           <nav className="expenses-navigation">
-            <button onClick={() => navigate("/dashboard/")}>
+            <button onClick={() => navigate("/dashboard")}>
               Dashboard
             </button>
 
             <button className="active">Expenses</button>
 
-            <button onClick={() => navigate("/categories/")}>
+            <button onClick={() => navigate("/categories")}>
               Categories
             </button>
           </nav>

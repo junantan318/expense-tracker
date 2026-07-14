@@ -170,11 +170,11 @@ function Categories() {
           <h2 className="categories-logo">ExpenseTracker</h2>
 
           <nav className="categories-navigation">
-            <button onClick={() => navigate("/dashboard")}>
+            <button onClick={() => navigate("/dashboard/")}>
               Dashboard
             </button>
 
-            <button onClick={() => navigate("/expenses")}>
+            <button onClick={() => navigate("/expenses/")}>
               Expenses
             </button>
 
