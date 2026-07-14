@@ -287,7 +287,7 @@ function openEditForm(expense) {
 
             <button className="active">Expenses</button>
 
-            <button onClick={() => navigate("/categories")}>
+            <button onClick={() => navigate("/categories/")}>
               Categories
             </button>
           </nav>

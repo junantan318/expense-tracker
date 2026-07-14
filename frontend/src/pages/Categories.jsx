@@ -109,7 +109,7 @@ function Categories() {
           )
         );
       } else {
-        const response = await api.post("/categories", categoryData);
+        const response = await api.post("/categories/", categoryData);
 
         setCategories((currentCategories) => [
           ...currentCategories,

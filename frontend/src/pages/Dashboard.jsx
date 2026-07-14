@@ -223,7 +223,7 @@ function Dashboard() {
 
             <button
               className="nav-item"
-              onClick={() => navigate("/categories")}
+              onClick={() => navigate("/categories/")}
             >
               Categories
             </button>
