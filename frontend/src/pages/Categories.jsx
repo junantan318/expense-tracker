@@ -30,7 +30,7 @@ function Categories() {
     setError("");
 
     try {
-      const response = await api.get("/categories");
+      const response = await api.get("/categories/");
       setCategories(response.data);
     } catch (error) {
       console.error(error);

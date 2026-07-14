@@ -60,8 +60,8 @@ function Expenses() {
 
     try {
       const [expensesResponse, categoriesResponse] = await Promise.all([
-        api.get("/expenses"),
-        api.get("/categories"),
+        api.get("/expenses/"),
+        api.get("/categories/"),
       ]);
 
       setExpenses(expensesResponse.data);
