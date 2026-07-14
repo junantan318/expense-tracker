@@ -157,7 +157,7 @@ function openEditForm(expense) {
         )
         );
     } else {
-        const response = await api.post("/expenses", payload);
+        const response = await api.post("/expenses/", payload);
 
         setExpenses((currentExpenses) => [
         response.data,
@@ -281,7 +281,7 @@ function openEditForm(expense) {
           <h2 className="expenses-logo">ExpenseTracker</h2>
 
           <nav className="expenses-navigation">
-            <button onClick={() => navigate("/dashboard")}>
+            <button onClick={() => navigate("/dashboard/")}>
               Dashboard
             </button>
 

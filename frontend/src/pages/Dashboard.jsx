@@ -67,7 +67,7 @@ function Dashboard() {
   function handleLogout() {
     removeToken();
 
-    navigate("/login", {
+    navigate("/login/", {
       replace: true,
     });
   }
@@ -216,7 +216,7 @@ function Dashboard() {
 
             <button
               className="nav-item"
-              onClick={() => navigate("/expenses")}
+              onClick={() => navigate("/expenses/")}
             >
               Expenses
             </button>
@@ -247,7 +247,7 @@ function Dashboard() {
 
           <button
             className="primary-button"
-            onClick={() => navigate("/expenses")}
+            onClick={() => navigate("/expenses/")}
           >
             Add Expense
           </button>
@@ -405,7 +405,7 @@ function Dashboard() {
 
                 <button
                   className="secondary-button"
-                  onClick={() => navigate("/expenses")}
+                  onClick={() => navigate("/expenses/")}
                 >
                   View All
                 </button>
@@ -417,7 +417,7 @@ function Dashboard() {
 
                   <button
                     className="primary-button"
-                    onClick={() => navigate("/expenses")}
+                    onClick={() => navigate("/expenses/")}
                   >
                     Add your first expense
                   </button>
