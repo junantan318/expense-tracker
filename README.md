@@ -1,139 +1,231 @@
-# expense-tracker
+# Expense Tracker
+
+Live Demo:
+https://expense-tracker-one-delta-41.vercel.app
+
+Backend API:
+http://47.131.251.17/docs
 
 ---
 
-## Project Summary
+## Overview
 
-A full-stack expense tracking application that allows users to record, organize, and review their personal expenses through a web interface and REST API.
+Expense Tracker is a full-stack web application that enables users to securely manage their personal finances.
 
----
+Users can register an account, authenticate using JWT, categorize expenses, filter transactions, and visualize spending through a dashboard.
 
-## Motivation
-
-Build a production-style expense tracking application from scratch while following modern backend development practices, including authentication, database design, testing, and deployment.
+The project was built to demonstrate production-oriented backend and deployment practices using FastAPI, React, PostgreSQL, Docker, AWS EC2, Vercel, and GitHub Actions.
 
 ---
 
-## Target Users
+## Features
 
-Individuals seeking a simple and efficient way to track their daily expenses, monitor spending patterns, and make informed financial decisions.
+### Authentication
 
----
-
-## Problem statement 
-
-Managing personal expenses manually can be time-consuming and makes it difficult to gain deep meaningful insights into spending habits.
-
----
-
-## Goals
-
-The goal of this application is to make expense tracking more simple and accessbile, helping users build consistent budgetting habits without feeling overwhelmed.
-
-- Simplify personal expense tracking.
-- Encourage users to build consistent budgeting habits.
-- Provide a clear overview of spending patterns.
-- Allow users to categorize and organize expenses.
-- Build a secure and scalable REST API using modern backend practices.
-
----
-
-## Core Features (version 1)
-
-### Authorization
-
-- Register a new Account
-- Log in securely using JWT authentication
+- User Registration
+- JWT Login
+- Protected Routes
+- Secure Password Hashing
 
 ### Expense Management
-- Create a new expense
-  - Enter expense title
-  - specify the expense amount
-  - Select a category
-  - Record the transaction date
-  - add optional description
-- View all recorded expenses
-- Update an existing expense
-- delete expense
 
-### Categories
-- Categorize expenses
-- view expenses by categories
+- Create Expenses
+- Edit Expenses
+- Delete Expenses
+- Expense Categories
+- Optional Descriptions
+
+### Dashboard
+
+- Total Spending
+- Monthly Spending
+- Category Breakdown
 
 ### Filtering
-- Filter by month
-- Filter by year
 
-### Summary
-- Display the total expenses by month/year
-- Display the total expenses by category
+- Date Range
+- Category
+- Search
 
----
+### Deployment
 
-## Future Features (version 2)
-
-- import bank statements
-- interactive charts and spending analytics
-- Recurring expenses
-- Saving Goals
-- Budget planning and spending limits
-- export expenses as csv or pdf
-- search expenses by keywords
-- 
-
+- Docker
+- AWS EC2
+- Nginx
+- GitHub Actions
+- Vercel
 ---
 
 ## Tech Stack
 
-### Backend
-- python
-- FastAPI
+### Frontend
 
-### Database
-- PostgreSQL
+- React
+- Axios
+- React Router
+
+### Backend
+
+- FastAPI
 - SQLAlchemy
 - Alembic
+- JWT Authentication
 
-### Authentication
-- JWT ( JSON Web Tokens)
-- Password Hashing (bcrypt)
+### Database
 
-### Testing
-- pytest
+- PostgreSQL
 
-### Development tools
+### Deployment
+
+- Docker
+- Docker Compose
+- AWS EC2
+- Nginx
+- Vercel
+- GitHub Actions
+
+### Development
+
 - Git
 - GitHub
 - Postman
+---
+User
+ │
+ ▼
+React (Vercel)
+ │
+ ▼
+FastAPI
+ │
+ ▼
+Nginx
+ │
+ ▼
+Docker Compose
+ │
+ ▼
+PostgreSQL
 
-### Deployment (planned)
+---
+
+## Screenshots
+
+### Dashboard
+
+(image)
+
+### Expenses
+
+(image)
+
+### Categories
+
+(image)
+
+### Login
+
+(image)
+
+---
+
+## Local Setup
+
+Clone repository
+
+git clone ...
+
+Backend
+
+cd backend
+
+python -m venv .venv
+
+pip install -r requirements.txt
+
+uvicorn app.main:app --reload
+
+Frontend
+
+cd frontend
+
+npm install
+
+npm run dev
+
+---
+
+## Environment Variables
+
+Backend
+
+```env
+DATABASE_URL=
+SECRET_KEY=
+ALGORITHM=
+ACCESS_TOKEN_EXPIRE_MINUTES=
+```
+
+Frontend
+
+```env
+VITE_API_BASE_URL=
+```
+---
+
+## Deployment
+
+Frontend
+
+- Hosted on Vercel
+
+Backend
+
 - Docker
 - AWS EC2
+- Nginx Reverse Proxy
+
+CI/CD
+
+- GitHub Actions automatically deploys backend changes after every push to main.
 
 ---
 
-## Database Overview
+## API
 
-To be designed
+Authentication
+
+POST /login
+
+POST /users
+
+Expenses
+
+GET /expenses
+
+POST /expenses
+
+PUT /expenses/{id}
+
+DELETE /expenses/{id}
+
+Categories
+
+GET /categories
+
+POST /categories
 
 ---
 
-## Api Overview
+## Lessons Learned
 
-The API will provide endpoints for:
-- Authentication
-- Expense Management
-- Categories
+During this project I learned:
 
----
-
-## Security
-
-To be designed
-
----
-
-## Project Status
-
-Planning
-
+- Building REST APIs with FastAPI
+- JWT Authentication
+- PostgreSQL database design
+- Docker containerization
+- Reverse proxy with Nginx
+- AWS EC2 deployment
+- CI/CD using GitHub Actions
+- Frontend deployment with Vercel
