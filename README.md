@@ -6,6 +6,8 @@ https://expense-tracker-one-delta-41.vercel.app
 Backend API:
 http://47.131.251.17/docs
 
+<img width="1851" height="916" alt="image" src="https://github.com/user-attachments/assets/a5d7e093-2f79-4d2c-9a52-a545d725201b" />
+
 ---
 
 ## Overview
@@ -113,19 +115,23 @@ PostgreSQL
 
 ### Dashboard
 
-(image)
+<img width="1851" height="916" alt="image" src="https://github.com/user-attachments/assets/27c018c2-356f-480f-b361-1b8b08e9adf3" />
+
 
 ### Expenses
 
-(image)
+<img width="1872" height="912" alt="image" src="https://github.com/user-attachments/assets/a4a6c454-46b6-4327-9488-41ecd16e6f28" />
+
 
 ### Categories
 
-(image)
+<img width="1869" height="916" alt="image" src="https://github.com/user-attachments/assets/506a4613-e9c0-42cc-b1a2-22561986859e" />
+
 
 ### Login
 
-(image)
+<img width="1116" height="909" alt="image" src="https://github.com/user-attachments/assets/15dda70d-aade-4717-9636-576010b484d1" />
+
 
 ---
 
